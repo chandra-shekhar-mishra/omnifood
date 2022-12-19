@@ -1,6 +1,6 @@
-/************************/
+/**************************/
 /* HEADER */
-/************************/
+/**************************/
 
 .header {
   display: flex;
@@ -8,6 +8,7 @@
   align-items: center;
   background-color: #fdf2e9;
 
+  /* Because we want header to be sticky later */
   height: 9.6rem;
   padding: 0 4.8rem;
   position: relative;
@@ -17,9 +18,9 @@
   height: 2.2rem;
 }
 
-/************************/
+/**************************/
 /* NAVIGATION */
-/************************/
+/**************************/
 
 .main-nav-list {
   list-style: none;
@@ -46,7 +47,7 @@
 .main-nav-link.nav-cta:link,
 .main-nav-link.nav-cta:visited {
   padding: 1.2rem 2.4rem;
-  border-radius: 0.9rem;
+  border-radius: 9px;
   color: #fff;
   background-color: #e67e22;
 }
@@ -75,9 +76,27 @@
   display: none;
 }
 
-/************************/
+/* STICKY NAVIGATION */
+.sticky .header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 8rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: rgba(255, 255, 255, 0.97);
+  z-index: 999;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+}
+
+.sticky .section-hero {
+  margin-top: 9.6rem;
+}
+
+/**************************/
 /* HERO SECTION */
-/************************/
+/**************************/
 
 .section-hero {
   background-color: #fdf2e9;
@@ -131,14 +150,15 @@
   font-size: 1.8rem;
   font-weight: 600;
 }
+
 .delivered-text span {
   color: #cf711f;
   font-weight: 700;
 }
 
-/************************/
+/**************************/
 /* FEATURED IN SECTION */
-/************************/
+/**************************/
 
 .section-featured {
   padding: 4.8rem 0 3.2rem 0;
@@ -165,9 +185,9 @@
   opacity: 50%;
 }
 
-/************************/
-/* HOW IT WORK SECTION */
-/************************/
+/**************************/
+/* HOW IT WORKS SECTION */
+/**************************/
 
 .section-how {
   padding: 9.6rem 0;
@@ -197,9 +217,7 @@
 .step-img-box::after {
   content: "";
   display: block;
-
   border-radius: 50%;
-
   position: absolute;
   top: 50%;
   left: 50%;
@@ -226,11 +244,12 @@
 
 .step-img {
   width: 35%;
+  /* z-index: 10; */
 }
 
-/************************/
+/**************************/
 /* MEALS SECTION */
-/************************/
+/**************************/
 
 .section-meals {
   padding: 9.6rem 0;
@@ -238,7 +257,7 @@
 
 .meal {
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
-  border-radius: 1.1rem;
+  border-radius: 11px;
   overflow: hidden;
   transition: all 0.4s;
 }
@@ -264,18 +283,16 @@
   font-size: 1.2rem;
   text-transform: uppercase;
   color: #333;
-  border-radius: 10rem;
+  border-radius: 100px;
   font-weight: 600;
 }
 
 .tag--vegetarian {
   background-color: #51cf66;
 }
-
 .tag--vegan {
   background-color: #94d82d;
 }
-
 .tag--paleo {
   background-color: #ffd43b;
 }
@@ -316,9 +333,9 @@
   font-size: 1.8rem;
 }
 
-/************************/
+/**************************/
 /* TESTIMONIALS SECTION */
-/************************/
+/**************************/
 
 .section-testimonials {
   background-color: #fdf2e9;
@@ -376,9 +393,9 @@
   transform: scale(1.1);
 }
 
-/************************/
-/* PRICING SECTION */
-/************************/
+/**************************/
+/* MEALS SECTION */
+/**************************/
 
 .section-pricing {
   padding: 9.6rem 0;
@@ -386,6 +403,7 @@
 
 .pricing-plan {
   border-radius: 11px;
+
   width: 75%;
 }
 
@@ -431,17 +449,17 @@
   margin-bottom: 3.2rem;
 }
 
-.plan-price span {
-  font-size: 3rem;
-  font-weight: 500;
-  margin-right: 0.8rem;
-}
-
 .plan-price {
   font-size: 6.2rem;
   font-weight: 600;
   color: #333;
   margin-bottom: 1.6rem;
+}
+
+.plan-price span {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-right: 0.8rem;
 }
 
 .plan-text {
@@ -470,31 +488,34 @@
   padding: 1.6rem;
   border-radius: 50%;
 }
+
 .feature-title {
   font-size: 2.4rem;
   color: #333;
   font-weight: 700;
   margin-bottom: 1.6rem;
 }
+
 .feature-text {
   font-size: 1.8rem;
   line-height: 1.8;
 }
 
-/************************/
+/**************************/
 /* CTA SECTION */
-/************************/
+/**************************/
 
 .section-cta {
-  /* top / right / bottom / left
-  padding: 9.6rem 0 12.8rem 0; */
+  /* top / right / bottom / left */
+  /* padding: 9.6rem 0 12.8rem 0; */
 
-  /* top / horizontal / left  */
+  /* top / horizontal / left */
   padding: 4.8rem 0 12.8rem;
 }
 
 .cta {
   display: grid;
+  /* 2/3 = 66.6% + 1/3 = 33.3% */
   grid-template-columns: 2fr 1fr;
   /* background-color: #e67e22; */
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
@@ -545,6 +566,7 @@
   font-weight: 500;
   margin-bottom: 1.2rem;
 }
+
 .cta-form input,
 .cta-form select {
   width: 100%;
@@ -561,14 +583,15 @@
 .cta-form input::placeholder {
   color: #aaa;
 }
+
 .cta *:focus {
   outline: none;
   box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
 }
 
-/************************/
-/* FOOTER SECTION */
-/************************/
+/**************************/
+/* FOOTER */
+/**************************/
 
 .footer {
   padding: 12.8rem 0;
@@ -607,10 +630,6 @@
   margin-top: auto;
 }
 
-.address {
-  margin-bottom: 2.4rem;
-}
-
 .footer-heading {
   font-size: 1.8rem;
   font-weight: 500;
@@ -621,6 +640,10 @@
   font-style: normal;
   font-size: 1.6rem;
   line-height: 1.6;
+}
+
+.address {
+  margin-bottom: 2.4rem;
 }
 
 .footer-nav {
